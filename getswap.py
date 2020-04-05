@@ -12,4 +12,4 @@ class MyHTMLParser(HTMLParser):
 
 parser = MyHTMLParser()
 parser.feed('<title>タイトル</title>'
-            '<h1>見出し</h1>')
+            '<h1>見出し1</h1>')
