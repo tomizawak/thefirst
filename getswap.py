@@ -1,6 +1,7 @@
+import requests
 from html.parser import HTMLParser
 
-class MyHTMLParser(HTMLParser):
+class RakutenParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         print("タグ開始:", tag)
 
@@ -10,6 +11,14 @@ class MyHTMLParser(HTMLParser):
     def handle_data(self, data):
         print("その他データ :", data)
 
-parser = MyHTMLParser()
-parser.feed('<title>タイトル</title>'
+
+if __name__ == "__main__":
+ 
+    url = "https://www.rakuten-sec.co.jp/web/fx/RateData/SwapData.dat"
+    r = requests.get(url)
+    
+    parser = RakutenParser()
+    parser.feed('<title>タイトル</title>'
             '<h1>見出し1</h1>')
+    
+    
